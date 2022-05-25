@@ -1,0 +1,124 @@
+.main-page {
+    background-color: #f9f9f9;
+    height: 100%;
+    width: 100%;
+}
+
+.main-content {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+.btn-generate {
+    color: white;
+    background-color: #2046f2;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.main-content section {
+    width: 50%;
+}
+
+.passwords {
+    width: 50%;
+}
+
+.passwords input {
+    width: 80%;
+    background-color: #e9ecf7;
+    border: 0;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    padding-left: 15px;
+    outline: none;
+    // border: 1px solid #e9ecf7;
+}
+
+.passwords input:focus {
+    height: 39px;
+    background-color:  white;
+    border: 1px solid #e9ecf7;
+}
+
+.passwords svg {
+    font-size: 14px;
+}
+
+.password {
+    margin-bottom: 10px;
+}
+
+.passwords button {
+    color: white;
+    background-color: #2046f2;
+    border: 1px solid #2046f2;
+    height: 42px;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+
+mat-slider {
+    width: 60%;
+}
+
+form div {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+input {
+    width: 20px;
+    height: 20px;
+    background-color: #e9ecf7;
+    cursor: pointer;
+}
+
+.main-description {
+    margin-top: 20px;
+}
+
+.form-number,
+.form-lowercase,
+.form-uppercase,
+.form-character {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.characters textarea {
+    background-color: #e9ecf7;
+    border: 0;
+    resize: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.characters textarea:focus {
+    background-color:  white;
+    // border: 0;
+    outline: 0;
+    border: 1px solid #e9ecf7;
+}

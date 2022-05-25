@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+<div class="main-page">
+<div class="wrapper">
+  <h2 class="main-title">Генератор случайных паролей онлайн:</h2>
+
+  <main class="main-content">
+    <section>
+      <div>
+        Длина пароля:
+
+            <mat-slider
+              class="example-margin"
+              [disabled]="disabled"
+              [invert]="invert"
+              [max]="max"
+              [min]="min"
+              [step]="step"
+              [thumbLabel]="thumbLabel"
+              [tickInterval]="getSliderTickInterval()"
+              [(ngModel)]="lengthPassword"
+              [vertical]="vertical"
+              aria-labelledby="example-name-label"
+            >
+            </mat-slider>
+            <label class="example-value-label">{{lengthPassword}}</label>
+
+        <!-- <input type="length" [defaultValue]="8" formControlName="lengthPassword"> - символов -->
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="generate()">
+        <div class="form-number">
+          <div (click)="addValue('numbers')">
+            <input type="checkbox" [defaultValue]="false" formControlName="numbers">
+          </div>
+          <div>
+            <label for="">Цифры</label>
+          </div>
+        </div>
+        <div class="form-lowercase">
+          <div>
+            <input type="checkbox" [defaultValue]="false" formControlName="lowercase">
+          </div>
+          <div>
+            <label for="">ПРОПИСНЫЕ КИРИЛЛИЦА</label>
+          </div>
+        </div>
+        <div class="form-uppercase">
+          <div>
+            <input type="checkbox" [defaultValue]="false" formControlName="uppercase">
+          </div>
+          <div>
+            <label for="">Строчные кириллица</label>
+          </div>
+        </div>
+        <div class="form-character">
+          <div>
+            <input type="checkbox" [defaultValue]="false" formControlName="excludeSimilarCharacters">
+          </div>
+          <div>
+            <label for="">Спец. символы</label>
+          </div>
+        </div>
+
+        <div class="characters">
+          <textarea name="" id="" cols="50" rows="10">{{test}}</textarea>
+        </div>
+
+        <button class="btn-generate" type="submit">
+          Cгенерировать
+        </button>
+      </form>
+    </section>
+
+    <div class="passwords">
+      <div class="password" *ngFor="let data of passwordList">
+        <input type="text" value="{{data.password}}" [(ngModel)]="data.password">
+        <button class="btn-copy" [cdkCopyToClipboard]="data.password">Copy</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="main-description">
+    <p>
+      Генератор паролей - незаменимый помощник при регистрации нового аккаунта, когда нужно придумать сложный пароль, подходящий под критерии площадки. Выберите состав пароля и его длину, и система сгенерирует для Вас индивидуальную последовательность символов. От вас требуется всего несколько кликов и программа поможет сгенерировать сразу несколько случайных надежных паролей на выбор.
+    </p>
+    <p>
+      Лаборатория Касперского рекомендует менять пароли от своих электронных почтовых ящиков и аккаунтов в социальных сетях минимум один раз в 2 месяца. Генератор паролей онлайн от involta - гарантия надёжности и уникальности, потому что все они создаются только один раз и сразу же удаляются. Если вы оставите только "Цифры", то можете использовать сервис как генератор случайных чисел.
+    </p>
+    <p>
+      Чтобы придумать надежный пароль для электронной почты или Вконтакте, не нужно вручную перебирать символы, достаточно выставить нужные настройки в генераторе и получить результат. Как он работает:
+      <br>
+      <b>1.</b> Выберите типы символов, из которых должен состоять пароль. Это может быть любая комбинация из цифр, прописных и строчных букв, а также знаков %, *, ),?, @, #, $, ~. Если какие-то символы вам не нужны, не ставьте напротив них галочку.
+      <br>
+      <b>2.</b> Выберите, какой символ должен стоять первым. Это может быть цифра или буква первый символ пароля. Комбинация может начинаться с буквы, цифры или любого символа.
+      <br>
+      <b>3.</b> Укажите длину пароля. Программа позволяет создавать комбинации размером от 1 до 30 символов, поэтому может работать как генератор не только паролей, но и случайных чисел, уникальных номеров, а также проверочных кодов.
+      <br>
+      <b>4.</b> Нажмите кнопку «Сгенерировать». Программа подберет для вас 5 вариантов надежных паролей, из которых вы сможете выбрать понравившийся.
+      <br>
+      <b>5.</b> Поисковые системы Яндекс и Гугл утверждают, что относительно надежный пароль имеет длину от 8 символов. При этом в нем должны быть использованы все возможные знаки. Пароль для Вк и других социальных сетей лучше генерировать из 8 символов и раз в пару месяцев менять, чем запоминать 12-значную комбинацию, которую все равно смогут взломать. Какой бы вариант вы ни выбрали, наша программа подберет вам подходящий пароль.
+    </p>
+  </div>
+</div>
+</div>
+
+<app-footer></app-footer>
