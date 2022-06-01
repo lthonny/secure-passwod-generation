@@ -8,7 +8,6 @@
     <section>
       <div>
         Длина пароля:
-
             <mat-slider
               class="example-margin"
               [disabled]="disabled"
@@ -24,8 +23,6 @@
             >
             </mat-slider>
             <label class="example-value-label">{{lengthPassword}}</label>
-
-        <!-- <input type="length" [defaultValue]="8" formControlName="lengthPassword"> - символов -->
       </div>
 
       <form [formGroup]="form" (ngSubmit)="generate()">
@@ -42,7 +39,7 @@
             <input type="checkbox" [defaultValue]="false" formControlName="lowercase">
           </div>
           <div>
-            <label for="">ПРОПИСНЫЕ КИРИЛЛИЦА</label>
+            <label for="">ПРОПИСНЫЕ ЛАТИНИЦА</label>
           </div>
         </div>
         <div class="form-uppercase">
@@ -50,7 +47,7 @@
             <input type="checkbox" [defaultValue]="false" formControlName="uppercase">
           </div>
           <div>
-            <label for="">Строчные кириллица</label>
+            <label for="">Строчные латиница</label>
           </div>
         </div>
         <div class="form-character">
@@ -75,7 +72,9 @@
     <div class="passwords">
       <div class="password" *ngFor="let data of passwordList">
         <input type="text" value="{{data.password}}" [(ngModel)]="data.password">
-        <button class="btn-copy" [cdkCopyToClipboard]="data.password">Copy</button>
+        <button class="btn-copy" [cdkCopyToClipboard]="data.password">
+          <i class="fa-regular fa-copy"></i>
+        </button>
       </div>
     </div>
   </main>
@@ -104,4 +103,4 @@
 </div>
 </div>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

@@ -66,10 +66,6 @@ export class AppComponent {
     excludeSimilarCharacters: new FormControl(null, [
       Validators.required
     ]),
-    // lengthPassword: new FormControl(null, [
-    //   Validators.required,
-    //   Validators.minLength(8)
-    // ]),
   });
 
   constructor(
