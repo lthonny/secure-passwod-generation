@@ -33,7 +33,7 @@ const generatePassword = async(server: FastifyInstance) => {
             lowercase,
             uppercase,
             excludeSimilarCharacters,
-            // symbols,
+            symbols: true,
             // exclude,
             // strict
         });
